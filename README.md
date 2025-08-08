@@ -1,7 +1,7 @@
 # MFTabPFN
 Multi-fidelity tabular prior-data fitted network model
 
-This repository contans code of MFTabPFN for adressing accurate prediction and uncertainty quantification of applications with single- or multi-fidelity data. Datasets corresponding to this repository can be found in https://doi.org/10.5281/zenodo.16777637 
+This repository contains the code for MFTabPFN, designed to address accurate prediction and uncertainty quantification for applications using single- or multi-fidelity data. The corresponding datasets for this repository are available at https://doi.org/10.5281/zenodo.16777637.
 
 
 
