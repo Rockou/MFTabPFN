@@ -37,19 +37,6 @@ for j in range(0, n_simulations):
     N_train = 3 * nx
     N = 1000
 
-    # pkl_file = os.path.join(SAVE_DIR, f'XX_train_yuan_{(Case+1)*100}.pkl')
-    # with open(pkl_file, 'wb') as f:
-    #     pickle.dump(XX_train_yuan, f)
-    # pkl_file = os.path.join(SAVE_DIR, f'XX_test_yuan_{(Case+1)*100}.pkl')
-    # with open(pkl_file, 'wb') as f:
-    #     pickle.dump(XX_total_yuan, f)
-    # pkl_file = os.path.join(SAVE_DIR, f'YY_train_yuan_{(Case+1)*100}.pkl')
-    # with open(pkl_file, 'wb') as f:
-    #     pickle.dump(YY_train_yuan, f)
-    # pkl_file = os.path.join(SAVE_DIR, f'YY_test_yuan_{(Case+1)*100}.pkl')
-    # with open(pkl_file, 'wb') as f:
-    #     pickle.dump(YY_total_yuan, f)
-
     pkl_file = os.path.join(SAVE_DIR, f'XX_train_yuan_{(Case + 1) * 100}.pkl')
     with open(pkl_file, 'rb') as f:
         XX_train_yuan = pickle.load(f)
