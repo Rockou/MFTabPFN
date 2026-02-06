@@ -81,24 +81,28 @@ To reproduce SU2-based CFD datasets (DLR-F4 wing-body and ONERA M6 wing):
 
 The repository is organized into three main application directories:
 
-- Single_fidelity_application/ — Prediction & UQ on single-fidelity data
-- Multi_fidelity_application/ — Pressure coefficient prediction for DLR-F4 wing-body (multi-fidelity)
-- Active_learning/ — Drag coefficient prediction & UQ for ONERA M6 wing with active learning (multi-fidelity)
+- Single_fidelity_application — Prediction & UQ on single-fidelity data
+- Multi_fidelity_application — Pressure coefficient prediction for DLR-F4 wing-body (multi-fidelity)
+- Active_learning — Drag coefficient prediction & UQ for ONERA M6 wing with active learning (multi-fidelity)
 
-Each directory contains MFTabPFN implementation, baseline methods, main scripts, and visualization tools.
+Each directory contains MFTabPFN implementation, baseline methods, and visualization tools.
 
 Run an example (single-fidelity):
 
+```bash
 cd Single_fidelity_application
-python TabPFN_model.py           # Run the model
-python HDR_Performance_S_Plot.py # Visualize results
+python HDR_Performance_S.py       # Run the model
+python HDR_Performance_S_Plot.py  # Visualize results
+```
 
 Toy examples (quick demonstrations):
 
+```bash
 cd Test_example
 python Toy_S.py       # Single-fidelity
 python Toy_M.py       # Multi-fidelity
 python Toy_Active.py  # Active learning with multi-fidelity
+```
 
 Results (metrics, predictions, figures) are automatically saved in the working directory or subfolders.
 
