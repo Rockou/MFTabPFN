@@ -32,6 +32,7 @@ Three separate environments are provided depending on your use case.
 
 ### 1. Core MFTabPFN (minimal setup for the main model)
 
+```bash
 git clone https://github.com/Rockou/MFTabPFN.git
 cd MFTabPFN
 
