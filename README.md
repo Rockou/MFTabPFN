@@ -3,11 +3,11 @@
 **Multi-Fidelity Tabular Prior-Data Fitted Network**
 
 [![Python 3.11](https://img.shields.io/badge/python-3.11-blue.svg)](https://www.python.org/downloads/release/python-3110/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 <!-- 如果有论文链接，请替换下面的 arXiv 徽章 -->
 <!-- [![arXiv](https://img.shields.io/badge/arXiv-preprint-red?logo=arXiv)](https://arxiv.org/abs/...) -->
 
-MFTabPFN is an advanced extension of TabPFN, specifically designed for **accurate prediction** and **uncertainty quantification** on both single-fidelity and multi-fidelity tabular data. It delivers state-of-the-art performance in data-scarce regimes, with strong applications in computational fluid dynamics (CFD), active learning, and other high-precision domains.
+MFTabPFN is an advanced extension of TabPFN, specifically designed for **accurate prediction** and **uncertainty quantification** on both single-fidelity and multi-fidelity tabular data. It delivers great performance in data-scarce regimes, with strong applications in computational fluid dynamics (CFD), active learning, and other high-precision domains.
 
 Datasets used in this work are publicly available at:  
 🔗 [Zenodo DOI: 10.5281/zenodo.16777637](https://doi.org/10.5281/zenodo.16777637)
@@ -22,7 +22,7 @@ Datasets used in this work are publicly available at:
 
 ## Requirements
 
-- Python ≥ 3.11
+- Python = 3.11
 - One or more GPUs (strongly recommended for efficient fine-tuning)
 - Git + Conda (or equivalent environment manager)
 
