@@ -1,31 +1,42 @@
 # MFTabPFN
-Multi-fidelity tabular prior-data fitted network model
 
-This repository contains the code for MFTabPFN, designed to address accurate prediction and uncertainty quantification for applications using single- or multi-fidelity data. The corresponding datasets for this repository are available at https://doi.org/10.5281/zenodo.16777637.
+**Multi-Fidelity Tabular Prior-Data Fitted Network**
 
-# Installation
-Due to parameter fine-tuning requirements of MFTabPFN, one or more GPUs are required to achieve efficient code execution.
+[![Python 3.11](https://img.shields.io/badge/python-3.11-blue.svg)](https://www.python.org/downloads/release/python-3110/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+<!-- 如果有论文链接，请替换下面的 arXiv 徽章 -->
+<!-- [![arXiv](https://img.shields.io/badge/arXiv-preprint-red?logo=arXiv)](https://arxiv.org/abs/...) -->
 
-MFTabPFN is developed based on TabPFN 2.2.1. To install MFTabPFN, clone the repository along with its associated datasets. Python 3.11 is required to install the repository. Suppose the conda is used to install, To just set up the MFTabPFN, run the following:
-git clone https://github.com/Rockou/MFtabPFN.git
-conda create -n MFTabPFN1 python=3.11
+MFTabPFN is an advanced extension of TabPFN, specifically designed for **accurate prediction** and **uncertainty quantification** on both single-fidelity and multi-fidelity tabular data. It delivers state-of-the-art performance in data-scarce regimes, with strong applications in computational fluid dynamics (CFD), active learning, and other high-precision domains.
+
+Datasets used in this work are publicly available at:  
+🔗 [Zenodo DOI: 10.5281/zenodo.16777637](https://doi.org/10.5281/zenodo.16777637)
+
+## ✨ Highlights
+
+- Superior performance on single- and multi-fidelity tabular tasks
+- Built on TabPFN v2.2.1 with multi-fidelity extensions
+- GPU-accelerated fine-tuning and inference
+- Comprehensive baselines from TabArena (RealMLP, TabM, LightGBM, XGBoost, CatBoost, AutoGluon, ModernNCA, TabDPT, EBM, FastaiMLP, ExtraTrees, etc.)
+- Ready-to-run examples for CFD (DLR-F4 wing-body, ONERA M6 wing) and toy demonstrations
+
+## Requirements
+
+- Python ≥ 3.11
+- One or more GPUs (strongly recommended for efficient fine-tuning)
+- Git + Conda (or equivalent environment manager)
+
+## Installation
+
+Three separate environments are provided depending on your use case.
+
+### 1. Core MFTabPFN (minimal setup for the main model)
+
+```bash
+git clone https://github.com/Rockou/MFTabPFN.git
 cd MFTabPFN
+
+conda create -n mftabpfn python=3.11 -y
+conda activate mftabpfn
+
 pip install -r requirements1.txt
-
-To setup the MFTabPFN and the compared single-fidelity baselines including RealMLP, TabM, LightGBM, CatBoost, XGBoost, ModernNCA, TorchMLP, TabDPT, EBM, FastaiMLP, ExtraTrees, Autogluon, etc., based on TabArena 0.0.1, run the following:
-conda create -n MFTabPFN2 python=3.11
-cd MFTabPFN
-pip install -r requirements2.txt
-pip install -e "TabPFN[dev]"
-pip install -e tabpfn-extensions
-
-To set up the linear and nonlinear multi-fidelity Gaussian process regression models, run the following:
-conda create -n MFTabPFN3 python=3.11
-cd MFTabPFN
-pip install -r requirements3.txt
-
-To perform computational fluid dynamics analysis of the DLR-F4 wing-body configuration (turb_DLR_F4.cfg, DLR_F4_mesh1.su2) and the ONERA M6 wing (low-fidelity: inv_ONERAM6_adv_low.cfg; high-fidelity: inv_ONERAM6_adv_high.cfg; mesh file: mesh_ONERAM6_inv_FFD.su2), the SU2 software should be installed. The installation file and installation instructions can be found at the SU2 official website at https://su2code.github.io and github at https://github.com/su2code/SU2. In the article, SU2 v8.2.0 Harrier was used. To facilitate the verification of ML models in computational fluid dynamics application, we have saved the corresponding training and testing datasets computed based on SU2 for the two applications, which can be directly used for various machine learning models without calling the SU2 software.
-# Usage
-The repository provides implementations for accurate prediction and uncertainty quantification on single-fidelity data (file: Single_fidelity_application), pressure coefficient distribution prediction for the DLR-F4 wing-body configuration using multi-fidelity data (file: Multi_fidelity_application), and drag coefficient prediction and uncertainty quantification for the ONERA M6 wing based on active learning using multi-fidelity data (file: Active_learning). All files include implementations of MFTabPFN and reference machine learning methods. To perform the corresponding analyses, directly execute the respective files, which will produce the corresponding results files being saved, and the results can be visualized by running the associated plotting files.
-
-Additionally, several testing examples with toy examples, including Toy_S.py, Toy_M.py, and Toy_Active.py, are provided to illustrate the application of MFTabPFN to single-fidelity data, multi-fidelity data, and active learning, respectively.
