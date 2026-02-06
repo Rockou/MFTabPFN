@@ -41,10 +41,12 @@ conda activate mftabpfn
 
 pip install -r requirements1.txt
 ```
+
 ### 2. Full Setup with TabArena Baselines
 
 Includes RealMLP, TabM, LightGBM, CatBoost, XGBoost, ModernNCA, TabDPT, EBM, FastaiMLP, ExtraTrees, AutoGluon, etc.
 
+```bash
 conda create -n mftabpfn-full python=3.11 -y
 conda activate mftabpfn-full
 
@@ -53,6 +55,7 @@ cd MFTabPFN
 pip install -r requirements2.txt
 pip install -e "TabPFN[dev]"
 pip install -e tabpfn-extensions
+```
 
 ### 3. Multi-Fidelity Gaussian Process Baselines
 
