@@ -33,7 +33,7 @@ Three separate environments are provided depending on your use case.
 
 ```bash
 git clone https://github.com/Rockou/MFTabPFN.git
-conda create -n mftabpfn python=3.11 -y
+conda create -n mftabpfn python=3.11
 conda activate mftabpfn
 cd MFTabPFN
 pip install -r requirements1.txt
@@ -50,7 +50,7 @@ python Toy_S.py
 Includes RealMLP, TabM, LightGBM, CatBoost, XGBoost, ModernNCA, TabDPT, EBM, FastaiMLP, ExtraTrees, AutoGluon, etc.
 
 ```bash
-conda create -n mftabpfn-full python=3.11 -y
+conda create -n mftabpfn-full python=3.11
 conda activate mftabpfn-full
 cd MFTabPFN
 pip install -r requirements2.txt
@@ -63,7 +63,7 @@ pip install -e tabpfn-extensions
 For linear and nonlinear multi-fidelity GPR models.
 
 ```bash
-conda create -n mftabpfn-gpr python=3.11 -y
+conda create -n mftabpfn-gpr python=3.11
 conda activate mftabpfn-gpr
 cd MFTabPFN
 pip install -r requirements3.txt
