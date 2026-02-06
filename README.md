@@ -53,9 +53,7 @@ Includes RealMLP, TabM, LightGBM, CatBoost, XGBoost, ModernNCA, TabDPT, EBM, Fas
 ```bash
 conda create -n mftabpfn-full python=3.11 -y
 conda activate mftabpfn-full
-
 cd MFTabPFN
-
 pip install -r requirements2.txt
 pip install -e "TabPFN[dev]"
 pip install -e tabpfn-extensions
@@ -65,12 +63,12 @@ pip install -e tabpfn-extensions
 
 For linear and nonlinear multi-fidelity GPR models.
 
+```bash
 conda create -n mftabpfn-gpr python=3.11 -y
 conda activate mftabpfn-gpr
-
 cd MFTabPFN
-
 pip install -r requirements3.txt
+```
 
 ### CFD Simulations (Optional)
 
