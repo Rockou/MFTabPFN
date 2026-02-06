@@ -1,0 +1,402 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tabpfn-extensions"
+version = "0.1.6"
+dependencies = [
+    "torch>=2.1,<3",
+    "pandas>=1.4.0,<3",
+    "scikit-learn>=1.2.0,<1.7",
+    "scipy>=1.11.1,<2",
+    "tabpfn>=2.1.1,<3",
+    "tabpfn-common-utils[telemetry-interactive]>=0.2.0",
+]
+
+requires-python = ">=3.9"
+authors = [
+    { name = "Noah Hollmann", email = "noah.hollmann@charite.de" },
+    { name = "Leo Grinsztajn" },
+    { name = "Samuel Müller", email = "muellesa@cs.uni-freiburg.de" },
+    { name = "Lennart Purucker" },
+    { name = "Arjun Krishnakumar" },
+    { name = "Max Körfer" },
+    { name = "Shi Bin Hoo" },
+    { name = "Robin Tibor Schirrmeister" },
+    { name = "Frank Hutter", email = "fh@cs.uni-freiburg.de" },
+    { name = "Eddie Bergman" },
+    { name = "Klemens Flöge" },
+    { name = "Oscar Key" },
+    { name = "Dominik Safaric" }
+]
+readme = "README.md"
+description = "TabPFN: Foundation model for tabular data"
+classifiers = [
+    'Intended Audience :: Science/Research',
+    'Intended Audience :: Developers',
+    'License :: OSI Approved :: Apache Software License',
+    'Programming Language :: Python',
+    'Topic :: Software Development',
+    'Topic :: Scientific/Engineering',
+    'Operating System :: POSIX',
+    'Operating System :: Unix',
+    'Operating System :: MacOS',
+    'Programming Language :: Python :: 3',
+    'Programming Language :: Python :: 3.9',
+    'Programming Language :: Python :: 3.10',
+    'Programming Language :: Python :: 3.11',
+    'Programming Language :: Python :: 3.12',
+    'Programming Language :: Python :: 3.13',
+]
+license = { file = "LICENSE" }
+
+[project.urls]
+documentation = "https://priorlabs.ai/docs"
+source = "https://github.com/PriorLabs/tabpfn-extensions"
+
+[project.optional-dependencies]
+interpretability = [
+    "shap>=0.41.0",
+    "shapiq>=0.4.0",
+    "seaborn>=0.12.2",
+]
+post_hoc_ensembles = [
+    "llvmlite",
+    "hyperopt>=0.2.7",
+    "autogluon.tabular==1.4.0"
+]
+hpo = [
+    "hyperopt>=0.2.7",
+    "setuptools>=67.0.0",
+]
+many_class = []
+classifier_as_regressor = []
+rf_pfn = []
+unsupervised = []
+
+# Meta-package that installs all extensions
+all = [
+    "shap>=0.41.0",
+    "shapiq>=0.4.0",
+    "seaborn>=0.12.2",
+
+    "llvmlite>=0.30.0",
+    "hyperopt>=0.2.7",
+    "setuptools>=67.0.0",
+
+    "autogluon.tabular==1.4.0"
+]
+
+dev = [
+    "pre-commit>=3.0.0",
+    "ruff==0.8.6",  # This must be the same version as in .pre-commit-config.yaml
+    "mypy>=1.0.0",
+    # Test
+    "pytest>=8.0.0",
+    "pytest-xdist>=3.6.0",
+    "pytest-mock>=3.15.1",
+]
+
+[group.build]
+dependencies = [
+    "build",
+    "twine",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]  # Where the tests are located
+minversion = "8.0"
+empty_parameter_set_mark = "xfail"  # Prevents user error of an empty `parametrize` of a test
+log_cli = false
+log_level = "DEBUG"
+xfail_strict = true
+addopts = "--durations=10 -vv"
+
+# https://github.com/charliermarsh/ruff
+[tool.ruff]
+target-version = "py39"
+line-length = 88
+output-format = "full"
+src = ["src", "tests", "examples"]
+
+[tool.ruff.lint]
+# Allow unused variables when underscore-prefixed.
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+select = [
+    "A",
+    # "ANN", # Handled by mypy
+    "ARG",
+    "B",
+    "BLE",
+    # COM812 removed to avoid conflicts with formatter
+    "COM",
+    "C4",
+    "D",
+    # "DTZ",  # One day I should know how to utilize timezones and dates...
+    "E",
+    # "EXE", Meh
+    "ERA",
+    "F",
+    "FBT",
+    "I",
+    # "ISC",  # Favours implicit string concatenation
+    "INP",
+    # "INT", # I don't understand this one
+    "N",
+    "NPY",
+    "PD",
+    "PLC",
+    "PLE",
+    "PLR",
+    "PLW",
+    "PIE",
+    "PT",
+    "PTH",
+    # "PYI", # Specific to .pyi files for type stubs
+    "Q",
+    "PGH004",
+    "RET",
+    "RUF",
+    "C90",
+    "S",
+    # "SLF",    # Private member accessed (sure, it's python)
+    "SIM",
+    # "TRY", # Good in principle, would take a lot of work to statisfy
+    "T10",
+    "T20",
+    "TID",
+    # TC003 replaced TCH003
+    "TC",
+    "UP",
+    "N",
+    "W",
+    "YTT",
+]
+
+ignore = [
+    "D104", # Missing docstring in public package
+    "D105", # Missing docstring in magic mthod
+    "D203", # 1 blank line required before class docstring
+    "D205", # 1 blank line between summary and description
+    "D401", # First line of docstring should be in imperative mood
+    "N806", # Variable X in function should be lowercase
+    "E731", # Do not assign a lambda expression, use a def
+    "A002", # Shadowing a builtin
+    "A003", # Shadowing a builtin
+    "S101", # Use of assert detected.
+    "W292", # No newline at end of file
+    "PLC1901", # "" can be simplified to be falsey
+    "TC003", # Move stdlib import into TYPE_CHECKING
+    "COM812", # Missing trailing comma in imports
+    "PLR2004", # Magic numbers, gets in the way a lot
+    "PLR0915", # Too many statements
+    "N803", # Argument name `X` should be lowercase
+    "N802", # Function name should be lowercase
+    "PLR0913", # Too many arguments in function definition
+    "SIM102", # Use a single if statement instead of nested if
+    "B007", # Loop control variable not used within loop body
+    "N815", # Variable should not be mixedCase
+    "S311", # Standard pseudo-random generators not suitable for crypto
+    "RUF010", # Use explicit conversion flag
+    "RET504", # Unnecessary assignment before return
+    "RUF009", # Do not perform function call in dataclass defaults
+    "SIM105", # Use contextlib.suppress instead of try-except-pass
+    "PLW2901", # For loop variable overwritten by assignment target
+    "SIM114", # Combine if branches using logical or
+    "PLW0603", # Using global statement to update variable is discouraged
+    # These tend to be lighweight and confuse pyright
+]
+
+exclude = [
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".hg",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "venv",
+    "docs",
+]
+
+# Exclude a variety of commonly ignored directories.
+[tool.ruff.lint.per-file-ignores]
+"tests/*.py" = [
+    "S101",
+    "D101",  # Missing docstring in public class
+    "D102",  # Missing docstring in public method
+    "D103",  # Missing docstring in public function
+    "D105",  # Missing docstring in magic method
+    "D106",  # Missing docstring in public nested class
+    "D107",   # Missing docstring in `__init__`
+    "ANN001",
+    "ANN201",
+    "FBT001",
+    "FBT002",
+    "D100",
+    "PLR2004",
+    "PD901", #  X is a bad variable name. (pandas)
+    "TCH",
+    "N803",
+    "C901", # Too complex
+    "E501", # Line too long
+    "PIE790", # Unnecessary pass statement
+    "NPY002", # Replace legacy np.random calls
+    "PT011", # pytest.raises is too broad
+    "PT012", # pytest.raises block should contain a single simple statement
+    "ARG001", # Unused function argument
+    "ARG002", # Unused method argument
+    "PLR5501", # Use elif instead of else then if
+    "SIM102", # Use a single if statement instead of nested if
+    "RUF013", # PEP 484 prohibits implicit Optional
+    "T201", # print found
+    "RET505", # Unnecessary else after return
+    "PLR0912", # Too many branches
+]
+"__init__.py" = ["I002", "D104", "RUF022"] # Missing docstring in public package, __all__ is not sorted
+"scripts/*.py" = [
+    "D100", # Missing docstring in public module
+    "PTH123", # open() should be replaced by Path.open()
+    "SIM115", # Use a context manager for opening files
+    "PTH118", # os.path.join() should be replaced by Path
+    "PTH100", # os.path.abspath() should be replaced by Path.resolve()
+    "T201", # print found
+    "E501", # Line too long
+    "RET505", # Unnecessary else after return
+]
+"examples/*" = [
+    "INP001", "I002", "E741", "D101", "D103", "T20",
+    "D415", "ERA001", "E402", "E501", "D100", "NPY002",
+    "PD901"
+]
+"docs/*" = ["INP001"]
+# Temporarily ignore docstring and line length issues in existing files
+"src/tabpfn_extensions/**/*.py" = [
+    "D100", # Missing docstring in public module
+    "D101", # Missing docstring in public class
+    "D102", # Missing docstring in public method
+    "D103", # Missing docstring in public function
+    "D105", # Missing docstring in magic method
+    "D107", # Missing docstring in public __init__
+    "D205", # Missing blank line after summary
+    "D415", # First line should end with a period
+    "D417", # Missing argument description in docstring
+    "E501", # Line too long
+    "B904", # Within an except clause, raise exceptions with from err
+    "NPY002", # Replace legacy np.random calls
+    "TC001", # Move application import into a type-checking block
+    "RET505", # Unnecessary else/elif after return statement
+    "FBT001", # Boolean-typed positional argument in function definition
+    "FBT002", # Boolean default positional argument in function definition
+    "ARG001", # Unused function argument
+    "ARG002", # Unused method argument
+    "C901", # Function is too complex
+    "PLR0912", # Too many branches
+    "PIE790", # Unnecessary pass statement
+    "PD011", # Use .to_numpy() instead of .values
+    "RUF022", # __all__ is not sorted
+]
+
+
+[tool.ruff.lint.isort]
+known-first-party = ["tabpfn"]
+known-third-party = ["sklearn"]
+no-lines-before = ["future"]
+required-imports = ["from __future__ import annotations"]
+combine-as-imports = true
+extra-standard-library = ["typing_extensions"]
+force-wrap-aliases = true
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.lint.pylint]
+max-args = 10 # Changed from default of 5
+
+[tool.mypy]
+python_version = "3.9"
+packages = ["src/tabpfn_extensions", "tests"]
+
+show_error_codes = true
+
+warn_unused_configs = true # warn about unused [tool.mypy] lines
+
+follow_imports = "normal"      # Type check top level api code we use from imports
+ignore_missing_imports = true  # Temporarily set to true to handle modules without stubs
+
+disallow_untyped_defs = false  # Temporarily set to false while we add types
+disallow_untyped_decorators = false
+disallow_incomplete_defs = false
+
+no_implicit_optional = true
+check_untyped_defs = true
+
+warn_return_any = true
+
+
+[[tool.mypy.overrides]]
+module = ["tests.*"]
+disallow_untyped_defs = false       # Sometimes we just want to ignore verbose types
+disallow_untyped_decorators = false # Test decorators are not properly typed
+disallow_incomplete_defs = false    # Sometimes we just want to ignore verbose types
+disable_error_code = ["var-annotated"]
+
+[[tool.mypy.overrides]]
+module = [
+]
+ignore_errors = true
+
+[[tool.mypy.overrides]]
+module = ["sklearn.*"]
+ignore_missing_imports = true
+
+[tool.pyright]
+include = ["src", "tests"]
+
+pythonVersion = "3.9"
+typeCheckingMode = "strict"
+
+strictListInference = true
+strictSetInference = true
+strictDictionaryInference = false
+reportImportCycles = false
+reportMissingSuperCall = true
+reportMissingTypeArgument = false
+reportOverlappingOverload = true
+reportIncompatibleVariableOverride = true
+reportIncompatibleMethodOverride = true
+reportInvalidTypeVarUse = true
+reportCallInDefaultInitializer = true
+reportImplicitOverride = true
+reportUnknownMemberType = false
+reportUnknownParameterType = false
+reportUnknownVariableType = false
+reportUnknownArgumentType = false
+reportUnknownLambdaType = false
+reportPrivateUsage = false
+reportUnnecessaryCast = false
+reportUnusedFunction = false
+reportMissingTypeStubs = false
+reportPrivateImportUsage = false
+reportUnnecessaryComparison = false
+reportConstantRedefinition = false
+reportUntypedFunctionDecorator = false
+
+[dependency-groups]
+dev = [
+    "build>=1.3.0",
+    "twine>=6.2.0",
+]
