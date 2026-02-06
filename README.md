@@ -90,8 +90,8 @@ Run an example (single-fidelity):
 
 ```bash
 cd Single_fidelity_application
-python HDR_Performance_S.py       # Run the model
-python HDR_Performance_S_Plot.py  # Visualize results
+python UQ_Prediction_S.py       # Run the model
+python UQ_S_Plot.py  # Visualize results
 ```
 
 Toy examples (quick demonstrations):
