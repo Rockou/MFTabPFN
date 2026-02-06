@@ -1,0 +1,10 @@
+GPy==1.13.2
+emukit==0.4.11
+numpy==1.26.4   
+pandas==2.3.3
+scikit-learn==1.6.1
+scipy==1.12.0  
+matplotlib==3.10.1
+seaborn==0.13.2
+
+
