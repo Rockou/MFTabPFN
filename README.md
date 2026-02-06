@@ -34,12 +34,16 @@ Three separate environments are provided depending on your use case.
 
 ```bash
 git clone https://github.com/Rockou/MFTabPFN.git
-cd MFTabPFN
-
 conda create -n mftabpfn python=3.11 -y
 conda activate mftabpfn
-
+cd MFTabPFN
 pip install -r requirements1.txt
+```
+After installation, you can verify it works by running one of the toy examples:
+
+```bash
+cd Test_example
+python Toy_S.py
 ```
 
 ### 2. Full Setup with TabArena Baselines
