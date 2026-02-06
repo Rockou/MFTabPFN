@@ -3,21 +3,20 @@
 **Multi-Fidelity Tabular Prior-Data Fitted Network**
 
 [![Python 3.11](https://img.shields.io/badge/python-3.11-blue.svg)](https://www.python.org/downloads/release/python-3110/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 <!-- If you have an arXiv / paper link, replace the line below -->
 <!-- [![arXiv](https://img.shields.io/badge/arXiv-preprint-red?logo=arXiv)](https://arxiv.org/abs/...) -->
 
-MFTabPFN is an advanced extension of TabPFN, specifically designed for accurate prediction and uncertainty quantification on both single-fidelity and multi-fidelity tabular data. It delivers strong performance in data-scarce regimes, with key applications in computational fluid dynamics (CFD), active learning, and other high-precision domains.
+MFTabPFN is an advanced extension of TabPFN, specifically designed for accurate prediction and uncertainty quantification on both single-fidelity and multi-fidelity tabular data. It is useful in data-scarce regimes, with key applications in computational fluid dynamics (CFD), active learning, and other high-precision domains.
 
 Datasets used in this work are publicly available at:  
 🔗 [Zenodo DOI: 10.5281/zenodo.16777637](https://doi.org/10.5281/zenodo.16777637)
 
 ## ✨ Highlights
 
-- Superior performance on single- and multi-fidelity tabular tasks
 - Built on TabPFN v2.2.1 with multi-fidelity extensions
 - GPU-accelerated fine-tuning and inference
-- Comprehensive baselines from TabArena (RealMLP, TabM, LightGBM, XGBoost, CatBoost, AutoGluon, ModernNCA, TabDPT, EBM, FastaiMLP, ExtraTrees, etc.)
+- Comprehensive baselines from TabArena v0.0.1 (RealMLP, TabM, LightGBM, XGBoost, CatBoost, AutoGluon, ModernNCA, TabDPT, EBM, FastaiMLP, ExtraTrees, etc.)
 - Ready-to-run examples for CFD (DLR-F4 wing-body, ONERA M6 wing) and toy demonstrations
 
 ## Requirements
@@ -105,32 +104,6 @@ python Toy_Active.py  # Active learning with multi-fidelity
 ```
 
 Results (metrics, predictions, figures) are automatically saved in the working directory or subfolders.
-
-## Citation
-
-If you find MFTabPFN useful in your research, please cite:
-
-@article{YAN202X_MFTabPFN,
-  title={Multi-Fidelity Tabular Prior-Data Fitted Network for Accurate Prediction and Uncertainty Quantification},
-  author={YAN et al.},
-  journal={...},
-  year={202X},
-  doi={...}
-}
-
-Also consider citing the foundational work:
-
-@article{hollmann2023tabpfn,
-  title={TabPFN: A Transformer That Solves Small Tabular Classification Problems in a Second},
-  author={Hollmann, Noah and M{\"u}ller, Samuel and H{\"o}ning, Robin and Kerschbaum, Frank and Hutter, Frank},
-  journal={arXiv preprint arXiv:2207.01848},
-  year={2023}
-}
-
-## License
-
-MIT License — see the LICENSE file for details.  
-Model weights and datasets may be subject to separate terms (refer to Zenodo).
 
 ---
 Last updated: February 2026
