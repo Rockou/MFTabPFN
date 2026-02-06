@@ -10,7 +10,7 @@
 MFTabPFN is an advanced extension of TabPFN, specifically designed for accurate prediction and uncertainty quantification on both single-fidelity and multi-fidelity tabular data. It is useful in data-scarce regimes, with key applications in computational fluid dynamics (CFD), active learning, and other high-precision domains.
 
 Datasets used in this work are publicly available at:  
-🔗 [Zenodo DOI: 10.5281/zenodo.16777637](https://doi.org/10.5281/zenodo.16777637)
+🔗 [Zenodo DOI: 10.5281/zenodo.16777637](https://doi.org/10.5281/zenodo.18502924)
 
 ## ✨ Highlights
 
