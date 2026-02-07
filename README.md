@@ -58,7 +58,7 @@ pip install -r requirements2.txt
 pip install -e "TabPFN[dev]"
 pip install -e tabpfn-extensions
 ```
-This takes 3-4 minutes to build.
+This takes 3-5 minutes to build.
 
 ### 3. Multi-Fidelity Gaussian Process Baselines
 
