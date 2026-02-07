@@ -38,13 +38,13 @@ conda activate mftabpfn
 cd MFTabPFN
 pip install -r requirements1.txt
 ```
-This takes 2–3 minutes to build (excluding the time to clone the repository). After installation, you can verify it works by running one of the toy examples:
+This takes 2-3 minutes to build (excluding the time to clone the repository). After installation, you can verify it works by running one of the toy examples:
 
 ```bash
 cd Test_example
 python Toy_S.py
 ```
-The runtime for this toy example is expected to be 20–30 seconds, with the expected output shown in the Toy_S_plot file. 
+The runtime for this toy example is expected to be 20-30 seconds, with the expected output shown in the Toy_S_plot file. 
 
 ### 2. Full Setup with TabArena Baselines
 
@@ -58,7 +58,7 @@ pip install -r requirements2.txt
 pip install -e "TabPFN[dev]"
 pip install -e tabpfn-extensions
 ```
-This takes 3–4 minutes to build.
+This takes 3-4 minutes to build.
 
 ### 3. Multi-Fidelity Gaussian Process Baselines
 
@@ -70,6 +70,7 @@ conda activate mftabpfn-gpr
 cd MFTabPFN
 pip install -r requirements3.txt
 ```
+This takes 0.5-1 minute to build.
 
 ### CFD Simulations (Optional)
 
