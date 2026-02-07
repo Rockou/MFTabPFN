@@ -44,7 +44,7 @@ This takes 2-3 minutes to build (excluding the time to clone the repository). Af
 cd Test_example
 python Toy_S.py
 ```
-The runtime for this toy example is expected to be 20-30 seconds, with the expected output shown in the Toy_S_plot file. 
+The runtime for this toy example is expected to be 20-30 seconds, with the expected output shown in the Toy_S_plot figure. 
 
 ### 2. Full Setup with TabArena Baselines
 
