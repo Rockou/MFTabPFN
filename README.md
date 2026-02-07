@@ -108,5 +108,15 @@ python Toy_Active.py  # Active learning with multi-fidelity
 
 Results (metrics, predictions, figures) are automatically saved in the working directory or subfolders.
 
+If you want to run the code with your own data, simply replace the synthetic data with your own.
+For the single-fidelity example in Toy_S.py:
+
+- Replace XX_train_yuan with your own training feature data
+- Replace YY_train_yuan with your own training label data
+- Replace XX_total_yuan with your own testing feature data
+
+After these changes, you can use MFTabPFN to make predictions on your testing data.
+
+
 ---
 Last updated: February 2026
