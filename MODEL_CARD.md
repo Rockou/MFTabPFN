@@ -49,16 +49,16 @@ Supports both **single-fidelity** and **multi-fidelity** tabular data seamlessly
 
 - Low-fidelity component: Uses official pre-trained TabPFN weights (no further pre-training).
 - High-fidelity encoder: Fine-tuned with frozen TabPFN backbone.
-- Optimizer: AdamW (default hyperparameters in code).
+- Optimizer: AdamW.
 - Hardware: NVIDIA RTX A6000 / similar GPU.
 
 
 ## Limitations
 
-- Requires one or more GPUs for best performance.
+- Requires GPU for performance.
 - Currently focused on regression tasks.
 - Interpretability not explicitly studied (mechanism validation of cross-fidelity correction is provided via Pearson correlation and cosine similarity in DLR-F4 application).
-- Performance on extremely high-dimensional data (>500 features) is not yet benchmarked.
+- Performance on extremely high-dimensional data (>500 features) not yet benchmarked.
 
 ## Ethical Considerations
 
