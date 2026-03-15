@@ -20,7 +20,7 @@ license: apache-2.0  # 请根据实际情况修改
 - **Model name**: MFTabPFN (Multi-Fidelity Tabular Prior-Data Fitted Network)
 - **Developers**: Yan Shi, Cheng Liu et al. (see full author list in the paper)
 - **Version**: v1.0 (March 2026)
-- **Base model**: TabPFN (transformer-based prior-data fitted network)
+- **Base model**: TabPFN (Tabular Prior-Data Fitted Network)
 - **Paper**: [arXiv / journal link will be added after acceptance]
 - **Repository**: https://github.com/Rockou/MFTabPFN
 
@@ -28,7 +28,7 @@ license: apache-2.0  # 请根据实际情况修改
 ### Architecture
 MFTabPFN extends TabPFN with a hierarchical transformer architecture:
 - **Low-fidelity model**: Pre-trained TabPFN (frozen parameters) processing low-fidelity data.
-- **High-fidelity model**: Lightweight encoder (RCNN for high-dimensional data; MLP for low-dimensional) + trainable scaling factor α appended to TabPFN.
+- **High-fidelity model**: Lightweight encoder (RCNN for high-dimensional data; MLP for low-dimensional data) + trainable scaling factor α appended to TabPFN.
 - **Final prediction**: Ŷ = α·Z_low(X) + Z_high(X)
 
 
@@ -43,7 +43,7 @@ Supports both **single-fidelity** and **multi-fidelity** tabular data seamlessly
 
 **Not intended for**: 
 
-- Classification tasks (regression only in current version).
+- Classification tasks (regression only in the current version).
 
 ## Training Procedure
 
@@ -58,7 +58,7 @@ Supports both **single-fidelity** and **multi-fidelity** tabular data seamlessly
 - Requires one or more GPUs for best performance.
 - Currently focused on regression tasks.
 - Interpretability not explicitly studied (mechanism validation of cross-fidelity correction is provided via Pearson correlation and cosine similarity in DLR-F4 application).
-- Performance on extremely high-dimensional data (>500 features) not yet benchmarked.
+- Performance on extremely high-dimensional data (>500 features) is not yet benchmarked.
 
 ## Ethical Considerations
 
@@ -69,7 +69,7 @@ This model is intended for scientific and engineering research. Users should ver
 ```bibtex
 @article{shi2026mftabpfn,
   title={A multi-fidelity tabular prior-data fitted network model for accurate prediction and uncertainty quantification},
-  author={Yan Shi, Cheng Liu, et al.},
+  author={Yan Shi, Cheng Liu et al.},
   journal={Journal},
   year={2026}
 }
