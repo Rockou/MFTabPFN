@@ -52,12 +52,19 @@ Supports both **single-fidelity** and **multi-fidelity** tabular data seamlessly
 - Optimizer: AdamW.
 - Hardware: NVIDIA RTX A6000 / similar GPU.
 
+## Evaluation
+
+MFTabPFN consistently provides great performance on:
+- 23 single-fidelity datasets including OpenML-CTR23 + synthetic high-dimensional datasets.
+- Multi-fidelity CFD cases (DLR-F4 wing-body, ONERA M6 wing).
+- Metrics: NNRMSE, NNMAE, R², RMSE, MAE, JS divergence & Wasserstein-1 (for UQ).
+
+Full results and ablation studies are in the paper and Supplementary Information.
 
 ## Limitations
 
 - Requires GPU for performance.
 - Currently focused on regression tasks.
-- Interpretability not explicitly studied (mechanism validation of cross-fidelity correction is provided via Pearson correlation and cosine similarity in DLR-F4 application).
 - Performance on extremely high-dimensional data (>500 features) not yet benchmarked.
 
 ## Ethical Considerations
