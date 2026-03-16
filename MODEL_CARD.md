@@ -55,7 +55,7 @@ Supports both **single-fidelity** and **multi-fidelity** tabular data seamlessly
 ## Evaluation
 
 MFTabPFN consistently provides great performance on:
-- 23 single-fidelity datasets including OpenML-CTR23 + synthetic high-dimensional datasets.
+- Single-fidelity datasets including OpenML-CTR23 + synthetic high-dimensional datasets.
 - Multi-fidelity CFD cases (DLR-F4 wing-body, ONERA M6 wing).
 - Metrics: NNRMSE, NNMAE, R², RMSE, MAE, JS divergence & Wasserstein-1 (for UQ).
 
