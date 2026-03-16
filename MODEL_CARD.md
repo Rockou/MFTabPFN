@@ -3,9 +3,9 @@ tags:
 - tabular
 - transformer
 - single- and multi-fidelity
+- accurate prediction
 - uncertainty quantification
 - active learning
-- few-shot
 license: apache-2.0  # 请根据实际情况修改
 ---
 
