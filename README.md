@@ -109,12 +109,14 @@ python Toy_Active.py  # Active learning with multi-fidelity
 Results (metrics, predictions, figures) are automatically saved in the working directory or subfolders.
 
 The single command script to produce main figures:
-Datasets will be **automatically downloaded** from Zenodo on the first run.
+
 ```bash
 cd Single_fidelity_application
 python SingleCommand_S.py       # Single-fidelity prediction and UQ
+
 cd Multi_fidelity_application
 python SingleCommand_M.py       # Pressure coefficient prediction for DLR-F4 wing-body
+
 cd Active_learning
 python SingleCommand_A.py       # Drag coefficient prediction & UQ for ONERA M6 wing with active learning
 ```
