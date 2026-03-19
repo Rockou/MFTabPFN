@@ -108,6 +108,18 @@ python Toy_Active.py  # Active learning with multi-fidelity
 
 Results (metrics, predictions, figures) are automatically saved in the working directory or subfolders.
 
+The single command script to produce main figures:
+Datasets will be **automatically downloaded** from Zenodo on the first run.
+```bash
+cd Single_fidelity_application
+python SingleCommand_S.py       # Single-fidelity prediction and UQ
+cd Multi_fidelity_application
+python SingleCommand_M.py       # Pressure coefficient prediction for DLR-F4 wing-body
+cd Active_learning
+python SingleCommand_A.py       # Drag coefficient prediction & UQ for ONERA M6 wing with active learning
+```
+
+
 If you want to run the code with your own data, simply replace the synthetic data with your own.
 For the single-fidelity example in Toy_S.py:
 
@@ -119,4 +131,4 @@ After these changes, you can use MFTabPFN to make predictions on your testing da
 
 
 ---
-Last updated: February 2026
+Last updated: March 2026
