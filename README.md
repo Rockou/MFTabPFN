@@ -104,6 +104,7 @@ cd Test_example
 python Toy_S.py       # Single-fidelity
 python Toy_M.py       # Multi-fidelity
 python Toy_Active.py  # Active learning with multi-fidelity
+python Toy_M3.py      # Extension to three-fidelity
 ```
 
 Results (metrics, predictions, figures) are automatically saved in the working directory or subfolders.
@@ -133,4 +134,4 @@ After these changes, you can use MFTabPFN to make predictions on your testing da
 
 
 ---
-Last updated: March 2026
+Last updated: May 2026
