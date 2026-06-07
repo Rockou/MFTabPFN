@@ -257,7 +257,7 @@ ax = sns.heatmap(
     linewidths=0.5,
     linecolor='white',
     cbar_kws={
-        'label': 'Mean p-value',
+        'label': 'Mean $p$-value',
         'shrink': 1.0,
         'pad': 0.01,
         'aspect': 25
@@ -281,7 +281,7 @@ for i, col in enumerate(pivot.columns):
             color='blue',
             transform=ax.get_xaxis_transform())
 
-plt.title('MFTabPFN vs Baselines: Wilcoxon p-value', x=0.5, y=1.03)
+plt.title('MFTabPFN vs Baselines: Wilcoxon $p$-value', x=0.5, y=1.03)
 plt.ylabel('Dataset')
 plt.xlabel('')
 plt.yticks(rotation=0)
