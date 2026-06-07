@@ -239,7 +239,7 @@ for col, metric in enumerate(metrics):
     ax.set_yscale('log')
     ax.set_title(metric_labels_title[metric])
     ax.set_ylabel(metric_labels[metric])
-    ax.set_xlabel('PF (feature dimension n)')
+    ax.set_xlabel('PF (feature dimension $n$)')
     ax.set_xticks(x_pos)
     ax.set_xticklabels(dataset_labels)
     ax.set_xlim(-0.15, 4.15)
@@ -339,7 +339,7 @@ for k in range(n_simulations):
         ax_pdf.hist(YY_total_yuan, bins=bins, density=True, alpha=0.4, color='#AED6F1',
                     edgecolor='black', label='Reference' if j == 0 else None, zorder=0)
 
-        ax_pdf.set_title(f'PF (n={(j + 1) * 100})')
+        ax_pdf.set_title(f'PF ($n$={(j + 1) * 100})')
         ax_pdf.set_xlim(x_min - 0.1 * x_range, x_max + 0.1 * x_range)
         ax_pdf.set_xticks([x_min, x_max])
         ax_pdf.xaxis.set_major_formatter(x_formatter)
