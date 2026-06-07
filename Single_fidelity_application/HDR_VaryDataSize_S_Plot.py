@@ -19,7 +19,7 @@ with open(pkl_file, 'rb') as f:
     Results_simulation_train_prediction = pickle.load(f)
 
 
-data_sizes = ['n', '2n', '3n', '4n', '5n']
+data_sizes = ['$n$', '2$n$', '3$n$', '4$n$', '5$n$']
 confidence = 0.95
 alpha = 1 - confidence
 free = len(Results_simulation_train_list[0][0]) - 1
@@ -73,11 +73,11 @@ model_markers = {
 }
 
 case_names = [
-    'PF (n=100)',
-    'PF (n=200)',
-    'PF (n=300)',
-    'PF (n=400)',
-    'PF (n=500)'
+    'PF ($n$=100)',
+    'PF ($n$=200)',
+    'PF ($n$=300)',
+    'PF ($n$=400)',
+    'PF ($n$=500)'
 ]
 metrics = ['RMSE_N', 'MAE_N', 'R2']
 metric_names = {'RMSE_N': 'NNRMSE', 'MAE_N': 'NNMAE', 'R2': 'R2'}
