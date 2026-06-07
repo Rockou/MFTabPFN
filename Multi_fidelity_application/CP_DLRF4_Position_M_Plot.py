@@ -208,7 +208,7 @@ for k in range(0, n_simulations):
 
         Y_TARGET = Results_DLRF4_input[j].loc[0, 'Y_TARGET']
         y_target = Y_TARGET[j]
-        ax.set_title(f'y/b = {y_target:.3f}')
+        ax.set_title(f'$y/b$ = {y_target:.3f}')
         if j == 0:
             ax.set_ylabel('Prediction')
         ax.set_xlabel('Reference')
@@ -302,7 +302,7 @@ cosine_sorted  = cosine_mean_df.loc[model_order].T
 dataset_labels = {}
 for j in range(n_performances):
     y_target = Results_DLRF4_input[j].loc[0, 'Y_TARGET'][j]
-    dataset_labels[j] = f'y/b = {y_target:.3f}'
+    dataset_labels[j] = f'$y/b$ = {y_target:.3f}'
 
 pearson_sorted.index = [dataset_labels.get(int(idx), str(idx)) for idx in pearson_sorted.index]
 cosine_sorted.index  = [dataset_labels.get(int(idx), str(idx)) for idx in cosine_sorted.index]
@@ -704,17 +704,17 @@ for k in range(0, n_simulations):
             ax.grid(True, axis='y', linestyle='--', linewidth=0.5, alpha=0.7)
 
             if col == 0:
-                ax.set_ylabel('Cp')
+                ax.set_ylabel('$Cp$')
             else:
                 ax.set_ylabel('')
 
             if j == n_performances - 1:
-                ax.set_xlabel('x/c')
+                ax.set_xlabel('$x/c$')
             else:
                 ax.set_xlabel('')
 
             if j == 0:
-                ax.set_title(f'y/b = {y_target:.3f}')
+                ax.set_title(f'$y/b$ = {y_target:.3f}')
 
     handles = [
             plt.Line2D([0], [0], color=model_colors['MFTabPFN'], lw=1.5, label='MFTabPFN'),
