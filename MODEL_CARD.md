@@ -76,7 +76,8 @@ This model is intended for scientific and engineering research. Users should ver
 ```bibtex
 @article{shi2026mftabpfn,
   title={A multi-fidelity tabular prior-data fitted network model for accurate prediction and uncertainty quantification},
-  author={Yan Shi, Cheng Liu et al.},
-  journal={Journal},
-  year={2026}
+  author={Yan Shi, Cheng Liu, Aodi Yu et al.},
+  journal={Nature Communications},
+  year={2026},
+  doi={10.1038/s41467-026-75163-w}
 }
