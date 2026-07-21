@@ -21,7 +21,7 @@ license: apache-2.0  # 请根据实际情况修改
 - **Developers**: Yan Shi, Cheng Liu et al. (see full author list in the paper)
 - **Version**: v1.0 (March 2026)
 - **Base model**: TabPFN (Tabular Prior-Data Fitted Network)
-- **Paper**: [arXiv / journal link will be added after acceptance]
+- **Paper**: https://doi.org/10.1038/s41467-026-75163-w
 - **Repository**: https://github.com/Rockou/MFTabPFN
 
 
