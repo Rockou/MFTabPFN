@@ -136,6 +136,7 @@ After these changes, you can use MFTabPFN to make predictions on your testing da
 
 If you use MFTabPFN in your research, please cite our paper:
 
+```bibtex
 @article{shi2026mftabpfn,
   title={A multi-fidelity tabular prior-data fitted network model for accurate prediction and uncertainty quantification},
   author={Shi, Yan and Liu, Cheng and Yu, Aodi and others},
