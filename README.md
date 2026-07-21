@@ -144,7 +144,7 @@ If you use MFTabPFN in your research, please cite our paper:
   year={2026},
   doi={10.1038/s41467-026-75163-w}
 }
-
+```
 
 ---
 Last updated: July 2026
