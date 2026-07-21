@@ -142,7 +142,7 @@ If you use MFTabPFN in your research, please cite our paper:
   author={Shi, Yan and Liu, Cheng and Yu, Aodi and others},
   journal={Nature Communications},
   year={2026},
-  doi={10.1038/s41467-026-75163-w}
+  doi={https://doi.org/10.1038/s41467-026-75163-w}
 }
 ```
 
