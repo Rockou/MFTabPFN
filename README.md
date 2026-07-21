@@ -132,8 +132,10 @@ For the single-fidelity example in Toy_S.py:
 
 After these changes, you can use MFTabPFN to make predictions on your testing data.
 
-Citation
+## Citation
+
 If you use MFTabPFN in your research, please cite our paper:
+
 @article{shi2026mftabpfn,
   title={A multi-fidelity tabular prior-data fitted network model for accurate prediction and uncertainty quantification},
   author={Shi, Yan and Liu, Cheng and Yu, Aodi and others},
